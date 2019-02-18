@@ -1,0 +1,18 @@
+<button mat-button [matMenuTriggerFor]="cartografia">CARTOGRAFÍA</button>
+<button mat-button [matMenuTriggerFor]="analiticas">ANALÍTICAS</button>
+<button mat-button>TIEMPO REAL</button>
+<button mat-button>CONFIGURACION</button>
+
+<mat-menu #cartografia="matMenu">
+  <button mat-menu-item>Plantas</button>
+  <button mat-menu-item>Puntos de interés</button>
+  <button mat-menu-item>Eventos</button>
+  <button mat-menu-item>Rutas</button>
+</mat-menu>
+
+<mat-menu #analiticas="matMenu">
+  <button mat-menu-item>Usuarios</button>
+  <button mat-menu-item>Eventos</button>
+  <button mat-menu-item>Mapas de calor</button>
+</mat-menu>
+
