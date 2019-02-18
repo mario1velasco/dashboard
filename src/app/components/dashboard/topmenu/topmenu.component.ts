@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-topmenu',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./topmenu.component.scss']
 })
 export class TopmenuComponent implements OnInit {
+  @Output() public sidenavToggle = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  public onToggleSidenav = () => {
+    this.sidenavToggle.emit();
+  }
 }
