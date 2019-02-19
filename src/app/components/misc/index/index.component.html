@@ -12,11 +12,11 @@
   <h2>Please fill the form with your details: </h2>
     <mat-form-field>
       <input matInput placeholder="Enter your email" [formControl]="email" required>
-      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="email.invalid">{{getErrorEmailMessage()}}</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input matInput placeholder="Enter your name" [formControl]="name" required>
-      <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="name.invalid">{{getErrorNameMessage()}}</mat-error>
     </mat-form-field>
     <div class="example-button-row">
       <button mat-button color="warn" type="submit" name="action" [disabled]="email.invalid || name.invalid">Confirmar</button>

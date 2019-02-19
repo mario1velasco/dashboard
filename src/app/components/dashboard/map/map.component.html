@@ -1,0 +1,29 @@
+<agm-map [latitude]='41.2181331' 
+         [longitude]='-3.6871827' 
+         [zoom]='7'
+         (mapClick)="selectPlaceOnClick($event)">
+  <agm-marker 
+    *ngFor="let m of places; let i = index"
+    [latitude]="m.lat"
+    [longitude]="m.lng"
+    [label]="m.info">   
+  </agm-marker>
+</agm-map>
+<div id="form-Places" *ngIf="!showAddPlace">
+  <h2>Tus Edificios ({{places.length}})</h2>
+  <mat-list #shoes>
+    <mat-list-item *ngFor="let place of places">
+      <button mat-icon-button color="warn">
+        <mat-icon aria-label="Delete current place" (click)="deletePlaceOnCLick(place.id)">delete</mat-icon>
+      </button>
+      <h4>{{place.info}}</h4>
+    </mat-list-item>
+  </mat-list>
+  <div gdAlignColumns="center stretch">
+    <button mat-raised-button color="primary" (click)="showAddPlace = true">Añadir lugar</button>
+  </div>
+</div>
+<div id="form-add_place" *ngIf="showAddPlace">
+  <h2>Haga click en donde esta el lugar a añadir</h2>
+</div>
+

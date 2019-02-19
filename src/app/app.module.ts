@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {AgmCoreModule } from '@agm/core';
 import {
   MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule,
   MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
@@ -19,6 +21,13 @@ import { IndexComponent } from './components/misc/index/index.component';
 import { MainComponent } from './components/dashboard/main/main.component';
 import { SidenavComponent } from './components/dashboard/sidenav/sidenav.component';
 import { TopmenuComponent } from './components/dashboard/topmenu/topmenu.component';
+import { RigthsidenavComponent } from './components/dashboard/rigthsidenav/rigthsidenav.component';
+import { MapComponent } from './components/dashboard/map/map.component';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
+import { CommonModule } from '@angular/common';
+import { NewPlaceComponent } from './components/dashboard/new-place/new-place.component';
+import { BuidingsComponent } from './components/dashboard/buidings/buidings.component';
+import { ProfileComponent } from './components/dashboard/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +35,15 @@ import { TopmenuComponent } from './components/dashboard/topmenu/topmenu.compone
     IndexComponent,
     MainComponent,
     SidenavComponent,
-    TopmenuComponent
+    TopmenuComponent,
+    RigthsidenavComponent,
+    MapComponent,
+    NewPlaceComponent,
+    BuidingsComponent,
+    ProfileComponent
+  ],
+  entryComponents: [
+    NewPlaceComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +52,12 @@ import { TopmenuComponent } from './components/dashboard/topmenu/topmenu.compone
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
+    FlexLayoutModule,
+    GooglePlaceModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA7E5jDVybM6YsC6HVD64E1Sv3Aj2Bwcpg'
+   }),
     MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule,
     MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,
     MatDialogModule, MatDividerModule, MatExpansionModule, MatFormFieldModule, MatGridListModule,

@@ -7,6 +7,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class TopmenuComponent implements OnInit {
   @Output() public sidenavToggle = new EventEmitter();
+  @Output() public rightsidenavToggle = new EventEmitter();
 
   constructor() { }
 
@@ -15,5 +16,8 @@ export class TopmenuComponent implements OnInit {
 
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
+  }
+  public onToggleRightSidenav = () => {
+    this.rightsidenavToggle.emit();
   }
 }

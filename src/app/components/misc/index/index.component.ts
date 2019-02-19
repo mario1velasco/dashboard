@@ -16,25 +16,21 @@ export class IndexComponent implements OnInit {
   bufferValue = 0;
 
   email = new FormControl('', [Validators.required, Validators.email]);
-  name = new FormControl('', [Validators.required]);
+  name = new FormControl('', [Validators.required, Validators.minLength(4)]);
   constructor(
     private router: Router,
     private sessionService: SessionService
   ) { }
 
-  getErrorMessage() {
-    if (this.name.valid && this.email.valid) {
-      this.bufferValue = 100;
-    } else if (this.name.valid) {
-      this.bufferValue = 50;
-    } else  if (this.email.valid) {
-      this.bufferValue = 50;
-    } else {
-      this.bufferValue = 0;
-    }
+  getErrorEmailMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
            this.email.hasError('email') ? 'Not a valid email' :
-           this.name.hasError('required') ? 'You must enter a value' :
+            '';
+  }
+
+  getErrorNameMessage() {
+    return this.name.hasError('required') ? 'You must enter a value' :
+           this.name.hasError('minLength') ? 'Name too short' :
             '';
   }
 

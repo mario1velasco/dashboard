@@ -1,39 +1,65 @@
 <mat-toolbar color="primary">
-  <div fxHide.gt-xs>
+  <div fxFlex fxLayout fxLayoutAlign="start">
+    <a (click)="onToggleRightSidenav()">
+      <img src="../../../../assets/images/situm-white-logo.png" alt="logo" height="42" width="42">
+    </a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.gt-sm>
       <button mat-icon-button (click)="onToggleSidenav()">
-          <mat-icon>menu</mat-icon>
+        <mat-icon>menu</mat-icon>
       </button>
   </div>
-  <div>
-      <a routerLink="/home">Owner-Account</a>
-  </div>
-  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-      <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-          <li>
-              <a routerLink="/owner">Owner Actions</a>
-          </li>
-          <li>
-              <a routerLink="/account">Account Actions</a>
-          </li>
-      </ul>
-  </div>
-  <button mat-button [matMenuTriggerFor]="cartografia">CARTOGRAFÍA</button>
-  <button mat-button [matMenuTriggerFor]="analiticas">ANALÍTICAS</button>
-  <button mat-button>TIEMPO REAL</button>
-  <button mat-button>CONFIGURACION</button>
   
-  <mat-menu #cartografia="matMenu">
-    <button mat-menu-item>Plantas</button>
-    <button mat-menu-item>Puntos de interés</button>
-    <button mat-menu-item>Eventos</button>
-    <button mat-menu-item>Rutas</button>
-  </mat-menu>
-  
-  <mat-menu #analiticas="matMenu">
-    <button mat-menu-item>Usuarios</button>
-    <button mat-menu-item>Eventos</button>
-    <button mat-menu-item>Mapas de calor</button>
-  </mat-menu>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.sm fxHide.xs>
+    <div fxLayout fxLayoutGap="15px" class="navigation-items">
+        <button mat-button [matMenuTriggerFor]="cartografia">
+            <mat-icon class="iconLarge">map</mat-icon> <span class="nav-caption">CARTOGRAFÍA</span>
+        </button>
+        <button mat-button [matMenuTriggerFor]="analiticas">
+            <mat-icon class="iconLarge">graphic_eq</mat-icon> <span class="nav-caption">ANALÍTICAS</span> 
+        </button>
+        <button mat-button>
+            <mat-icon class="iconLarge">play_arrow</mat-icon><span class="nav-caption">TIEMPO REAL</span>
+        </button>
+        <button mat-button>
+            <mat-icon class="iconLarge">settings</mat-icon><span class="nav-caption">CONFIGURACIÓN</span>
+        </button>
+        
+        <mat-menu #cartografia="matMenu">
+            <button mat-menu-item>
+              <mat-icon class="iconLarge">terrain</mat-icon>
+              Plantas
+            </button>
+            <button mat-menu-item>
+              <mat-icon class="iconLarge">place</mat-icon>
+              Puntos de interés
+            </button>
+            <button mat-menu-item>
+              <mat-icon class="iconLarge">calendar_today</mat-icon>
+              Eventos
+            </button>
+            <button mat-menu-item>
+              <mat-icon class="iconLarge">directions_walk</mat-icon>
+              Rutas
+            </button>
+          </mat-menu>
+        
+          <mat-menu #analiticas="matMenu">
+            <button mat-menu-item>
+              <mat-icon class="iconLarge">supervisor_account</mat-icon>
+              Usuarios
+            </button>
+            <button mat-menu-item>
+              <mat-icon class="iconLarge">calendar_today</mat-icon>
+              Eventos
+            </button>
+            <button mat-menu-item>
+              <mat-icon class="iconLarge">flip_to_back</mat-icon>
+              Mapas de calor
+            </button>
+          </mat-menu>
+    </div>
+  </div>
 </mat-toolbar>
 
 
