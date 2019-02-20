@@ -9,21 +9,6 @@
     [label]="m.info">   
   </agm-marker>
 </agm-map>
-<mat-list-item  *ngIf="!showAddPlace">
-  <h2>Tus Edificios ({{places.length}})</h2>
-  <mat-list #shoes>
-    <mat-list-item *ngFor="let place of places">
-      <button mat-raised-button color="accent" (click)="goToPlaceOnCLick(place.id)"><strong>Ir</strong></button>
-      <h4>{{place.info}}</h4>
-      <button mat-icon-button color="warn">
-        <mat-icon aria-label="Delete current place" (click)="deletePlaceOnCLick(place.id)">delete</mat-icon>
-      </button>
-    </mat-list-item>
-  </mat-list>
-  <div gdAlignColumns="center stretch">
-    <button mat-raised-button color="primary" (click)="showAddPlace = true">Añadir lugar</button>
-  </div>
-</mat-list-item>
 <div id="form-add_place" *ngIf="showAddPlace">
   <h2>Haga click en donde esta el lugar a añadir</h2>
 </div>
