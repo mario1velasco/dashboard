@@ -16,8 +16,8 @@
               <mat-panel-title>
                 <h4>{{place.info}}</h4>
               </mat-panel-title>
-              <mat-panel-description>
-                <h4>Click para sacar la info</h4>
+              <mat-panel-description fxLayout="row" fxLayoutAlign="end">
+                <h4>Click en la barra para sacar la info</h4>
               </mat-panel-description>
             </mat-expansion-panel-header>
             <div  fxLayout="row" fxLayoutAlign="space-around">
@@ -30,6 +30,12 @@
           </mat-expansion-panel>
           <mat-divider></mat-divider>
         </mat-accordion>
+        <div>
+          <br>
+          <div class="example-button-row">
+            <a mat-raised-button color="primary" matTooltip="Volver al Mega Dashboard!" routerLink="/dashboard">VOLVER AL DASHBOARD</a>
+          </div>
+        </div>
       </main>
     </mat-sidenav-content>
   </mat-sidenav-container>

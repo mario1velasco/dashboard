@@ -3,16 +3,16 @@
     <mat-icon class="iconLarge">reply</mat-icon> 
     <h4>Inicio</h4>
   </a>
-  <a mat-list-item routerLink="/buildings">
+  <a mat-list-item routerLink="/dashboard/buildings">
     <mat-icon class="iconLarge">store_mall_directory</mat-icon> 
     <h4>Edificios</h4> 
   </a>
-  <a mat-list-item routerLink="/profile">
+  <a mat-list-item routerLink="/dashboard/profile">
     <mat-icon class="iconLarge">face</mat-icon>
     <h4>Perfil</h4>
   </a>
   <div fxLayout="row" fxLayoutAlign="space-around">
-    <a mat-item href="https://situm.es/es/pruebanos">
+    <a mat-item (click)="goToSitumClick()">
       <mat-icon class="iconLarge">help</mat-icon>
     </a>
     <a mat-item routerLink="/index">

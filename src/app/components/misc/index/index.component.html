@@ -9,7 +9,7 @@
 <mat-progress-bar mode="query"></mat-progress-bar>
 <form (ngSubmit)="onSubmitSignup(loginForm)" #loginForm="ngForm">
 <div class="example-container">
-  <h2>Please fill the form with your details: </h2>
+  <h2>Por favor, rellena el formulario con tus datos: </h2>
     <mat-form-field>
       <input matInput placeholder="Enter your email" [formControl]="email" required>
       <mat-error *ngIf="email.invalid">{{getErrorEmailMessage()}}</mat-error>
@@ -19,7 +19,7 @@
       <mat-error *ngIf="name.invalid">{{getErrorNameMessage()}}</mat-error>
     </mat-form-field>
     <div class="example-button-row">
-      <button mat-button color="warn" type="submit" name="action" [disabled]="email.invalid || name.invalid">Confirmar</button>
+      <button mat-button color="warn" type="submit" name="action" [disabled]="email.invalid || name.invalid" matTooltip="¡Bienvenido al futuro!">Confirmar</button>
     </div>
   </div>
 </form>

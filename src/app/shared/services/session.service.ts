@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
 import { Place } from '../models/place.model';
+import { Router } from '@angular/router';
 
 
 const CURRENT_USER_KEY = 'currentUser';
@@ -11,7 +12,10 @@ const CURRENT_PLACES_KEY = 'currentPlaces';
 export class SessionService {
   private user: User;
   private places: Array<Place>;
-  constructor() {
+
+  constructor(
+    private router: Router
+  ) {
     this.user = JSON.parse(localStorage.getItem(CURRENT_USER_KEY));
     this.places = JSON.parse(localStorage.getItem(CURRENT_PLACES_KEY));
    }
@@ -44,6 +48,13 @@ export class SessionService {
     localStorage.setItem(CURRENT_PLACES_KEY, JSON.stringify(this.places));
   }
 
+  checkIfUserLogin() {
+    if ((this.getPlaces().length === 0) ||
+    (Object.entries(this.getUser()).length === 0)) {
+      this.router.navigateByUrl('/index');
+    }
+    this.places = this.getPlaces();
+  }
   initializePlaces(): Array<Place> {
     return this.places = [
       {

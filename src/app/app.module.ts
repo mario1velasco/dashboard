@@ -28,6 +28,7 @@ import { CommonModule } from '@angular/common';
 import { NewPlaceComponent } from './components/dashboard/new-place/new-place.component';
 import { BuidingsComponent } from './components/dashboard/buidings/buidings.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
+import { UnderConstructionComponent } from './components/dashboard/under-construction/under-construction.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ProfileComponent } from './components/dashboard/profile/profile.compone
     MapComponent,
     NewPlaceComponent,
     BuidingsComponent,
-    ProfileComponent
+    ProfileComponent,
+    UnderConstructionComponent
   ],
   entryComponents: [
     NewPlaceComponent

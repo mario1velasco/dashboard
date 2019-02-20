@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-topmenu',
@@ -9,7 +10,9 @@ export class TopmenuComponent implements OnInit {
   @Output() public sidenavToggle = new EventEmitter();
   @Output() public rightsidenavToggle = new EventEmitter();
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -19,5 +22,9 @@ export class TopmenuComponent implements OnInit {
   }
   public onToggleRightSidenav = () => {
     this.rightsidenavToggle.emit();
+  }
+
+  public goToUnderConstruction() {
+    this.router.navigate(['/dashboard/construction']);
   }
 }

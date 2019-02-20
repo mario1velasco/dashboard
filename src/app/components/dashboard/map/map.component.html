@@ -1,6 +1,6 @@
-<agm-map [latitude]='41.2181331' 
-         [longitude]='-3.6871827' 
-         [zoom]='7'
+<agm-map [latitude]='lat' 
+         [longitude]='lng' 
+         [zoom]='zoom'
          (mapClick)="selectPlaceOnClick($event)">
   <agm-marker 
     *ngFor="let m of places; let i = index"
@@ -9,21 +9,59 @@
     [label]="m.info">   
   </agm-marker>
 </agm-map>
-<div id="form-Places" *ngIf="!showAddPlace">
+<mat-list-item  *ngIf="!showAddPlace">
   <h2>Tus Edificios ({{places.length}})</h2>
   <mat-list #shoes>
     <mat-list-item *ngFor="let place of places">
+      <button mat-raised-button color="accent" (click)="goToPlaceOnCLick(place.id)"><strong>Ir</strong></button>
+      <h4>{{place.info}}</h4>
       <button mat-icon-button color="warn">
         <mat-icon aria-label="Delete current place" (click)="deletePlaceOnCLick(place.id)">delete</mat-icon>
       </button>
-      <h4>{{place.info}}</h4>
     </mat-list-item>
   </mat-list>
   <div gdAlignColumns="center stretch">
     <button mat-raised-button color="primary" (click)="showAddPlace = true">Añadir lugar</button>
   </div>
-</div>
+</mat-list-item>
 <div id="form-add_place" *ngIf="showAddPlace">
   <h2>Haga click en donde esta el lugar a añadir</h2>
 </div>
 
+<div id="form-Places" *ngIf="!showAddPlace">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtra por Información">
+  </mat-form-field>
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="info">
+      <th mat-header-cell *matHeaderCellDef> Información </th>
+      <td mat-cell *matCellDef="let element"> {{element.info}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="ir">
+      <th mat-header-cell *matHeaderCellDef> Lugar </th>
+      <td mat-cell *matCellDef="let element"> 
+          <button mat-icon-button color="accent" >
+              <mat-icon aria-label="Delete current place"(click)="goToPlaceOnCLick(element.id)">place</mat-icon>
+          </button>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="borrar">
+      <th mat-header-cell *matHeaderCellDef> Borrar </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="warn">
+          <mat-icon aria-label="Delete current place" (click)="deletePlaceOnCLick(element.id)">delete</mat-icon>
+        </button>  
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div gdAlignColumns="center stretch">
+    <button mat-raised-button color="primary" (click)="showAddPlace = true">Añadir lugar</button>
+  </div>
+</div>

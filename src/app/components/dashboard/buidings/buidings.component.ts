@@ -10,12 +10,13 @@ import { SessionService } from 'src/app/shared/services/session.service';
 export class BuidingsComponent implements OnInit {
   places: Array<Place>;
   panelOpenState = false;
-  
+
   constructor(
     private sessionService: SessionService
   ) { }
 
   ngOnInit() {
+    this.sessionService.checkIfUserLogin();
     this.places = this.sessionService.getPlaces();
   }
 

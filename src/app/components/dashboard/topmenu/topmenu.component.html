@@ -18,42 +18,42 @@
         <button mat-button [matMenuTriggerFor]="analiticas">
             <mat-icon class="iconLarge">graphic_eq</mat-icon> <span class="nav-caption">ANALÍTICAS</span> 
         </button>
-        <button mat-button>
+        <button mat-button (click)="goToUnderConstruction()">
             <mat-icon class="iconLarge">play_arrow</mat-icon><span class="nav-caption">TIEMPO REAL</span>
         </button>
-        <button mat-button>
+        <button mat-button (click)="goToUnderConstruction()">
             <mat-icon class="iconLarge">settings</mat-icon><span class="nav-caption">CONFIGURACIÓN</span>
         </button>
         
         <mat-menu #cartografia="matMenu">
-            <button mat-menu-item>
+            <button mat-menu-item (click)="goToUnderConstruction()">
               <mat-icon class="iconLarge">terrain</mat-icon>
               Plantas
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item (click)="goToUnderConstruction()">
               <mat-icon class="iconLarge">place</mat-icon>
               Puntos de interés
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item (click)="goToUnderConstruction()">
               <mat-icon class="iconLarge">calendar_today</mat-icon>
               Eventos
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item (click)="goToUnderConstruction()">
               <mat-icon class="iconLarge">directions_walk</mat-icon>
               Rutas
             </button>
           </mat-menu>
         
           <mat-menu #analiticas="matMenu">
-            <button mat-menu-item>
+            <button mat-menu-item (click)="goToUnderConstruction()">
               <mat-icon class="iconLarge">supervisor_account</mat-icon>
               Usuarios
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item (click)="goToUnderConstruction()">
               <mat-icon class="iconLarge">calendar_today</mat-icon>
               Eventos
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item (click)="goToUnderConstruction()">
               <mat-icon class="iconLarge">flip_to_back</mat-icon>
               Mapas de calor
             </button>

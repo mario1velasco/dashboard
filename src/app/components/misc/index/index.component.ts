@@ -16,21 +16,21 @@ export class IndexComponent implements OnInit {
   bufferValue = 0;
 
   email = new FormControl('', [Validators.required, Validators.email]);
-  name = new FormControl('', [Validators.required, Validators.minLength(4)]);
+  name = new FormControl('', [Validators.minLength(4), Validators.required]);
   constructor(
     private router: Router,
     private sessionService: SessionService
   ) { }
 
   getErrorEmailMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-           this.email.hasError('email') ? 'Not a valid email' :
+    return this.email.hasError('required') ? 'No puede estar vacío' :
+           this.email.hasError('email') ? 'Email no válido' :
             '';
   }
 
   getErrorNameMessage() {
-    return this.name.hasError('required') ? 'You must enter a value' :
-           this.name.hasError('minLength') ? 'Name too short' :
+    return this.name.hasError('minLength') ? 'Mínimo cuatro caracteres' :
+           this.name.hasError('required') ? 'No puede estar vacío' :
             '';
   }
 
