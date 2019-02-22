@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment.prod';
 import { SessionService } from './shared/services/session.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -58,7 +59,7 @@ import { UnderConstructionComponent } from './components/dashboard/under-constru
     FlexLayoutModule,
     GooglePlaceModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyA7E5jDVybM6YsC6HVD64E1Sv3Aj2Bwcpg'
+      apiKey: environment.api_key
    }),
     MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonModule,
     MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule,

@@ -16,7 +16,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'info', 'ir', 'borrar'];
+  displayedColumns: string[] = ['borrar', 'info'];
   dataSource = new MatTableDataSource();
   id = 0;
   showAddPlace = false;
@@ -24,6 +24,8 @@ export class MapComponent implements OnInit {
   lat = 41.2181331;
   lng = -3.6871827;
   zoom = 7;
+  bigScreen = true;
+  showTable = false;
 
   constructor(
     private sessionService: SessionService,
@@ -38,6 +40,7 @@ export class MapComponent implements OnInit {
     this.sessionService.checkIfUserLogin();
     this.places = this.sessionService.getPlaces();
     this.dataSource = new MatTableDataSource(this.places);
+    this.bigScreen = (window.screen.width >= 600) ? true : false;
   }
 
   public handleAddressChange(option: string) {}
