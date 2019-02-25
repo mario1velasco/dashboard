@@ -9,15 +9,17 @@
     [label]="m.info">   
   </agm-marker>
 </agm-map>
-<div id="form-add_place" *ngIf="showAddPlace">
+<div id="form-add_place" *ngIf="showAddPlace"  class="animated flash">
   <h2>Haga click en donde esta el lugar a añadir</h2>
 </div>
 
-<div *ngIf="!bigScreen && showTable" id="mini-btn">
-    <button mat-raised-button (click)="showTable = !showTable">mini</button>
+<div *ngIf="!bigScreen && showTable" id="mini-btn" class="animated zoomIn">
+    <button mat-raised-button (click)="showTable = !showTable">
+        <mat-icon class="iconLarge">close</mat-icon>
+    </button>
 </div>
 <div id="form-Places" *ngIf="!showAddPlace" mat-elevation-z8>
-  <div *ngIf="bigScreen || showTable">
+  <div *ngIf="bigScreen || showTable" class="animated bounceInLeft">
     <mat-form-field>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtra por Información">
     </mat-form-field>
@@ -48,7 +50,7 @@
       <button mat-raised-button color="primary" (click)="showAddPlace = true">Añadir lugar</button>
     </div>
   </div>
-  <div *ngIf="!bigScreen && !showTable">
+  <div *ngIf="!bigScreen && !showTable" class="animated bounceInLeft">
       <button mat-raised-button (click)="showTable = !showTable">Ver Sitios</button>
   </div>
 </div>

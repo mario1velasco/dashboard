@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <div fxFlex fxLayout fxLayoutAlign="start center">
     <a (click)="onToggleRightSidenav()">
-      <img src="./assets/images/situm-white-logo.png" alt="logo" height="42" width="42">
+      <img src="./assets/images/situm-white-logo.png" alt="logo" height="42" width="42" (mouseover) = "animatedIcon($event, 'heartBeat')" (mouseleave) = "unAnimatedIcon($event, 'heartBeat')">
     </a>
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.gt-sm>
@@ -12,48 +12,48 @@
   
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.sm fxHide.xs>
     <div fxLayout fxLayoutGap="15px" class="navigation-items">
-        <button mat-button [matMenuTriggerFor]="cartografia">
+        <button mat-button [matMenuTriggerFor]="cartografia" (mouseover) = "animatedIcon($event, 'pulse')" (mouseleave) = "unAnimatedIcon($event, 'pulse')">
             <mat-icon class="iconLarge">map</mat-icon> <span class="nav-caption">CARTOGRAFÍA</span>
         </button>
-        <button mat-button [matMenuTriggerFor]="analiticas">
+        <button mat-button [matMenuTriggerFor]="analiticas" (mouseover) = "animatedIcon($event, 'pulse')" (mouseleave) = "unAnimatedIcon($event, 'pulse')">
             <mat-icon class="iconLarge">graphic_eq</mat-icon> <span class="nav-caption">ANALÍTICAS</span> 
         </button>
-        <button mat-button (click)="goToUnderConstruction()">
+        <button mat-button (click)="goToUnderConstruction()" (mouseover) = "animatedIcon($event, 'pulse')" (mouseleave) = "unAnimatedIcon($event, 'pulse')">
             <mat-icon class="iconLarge">play_arrow</mat-icon><span class="nav-caption">TIEMPO REAL</span>
         </button>
-        <button mat-button (click)="goToUnderConstruction()">
+        <button mat-button (click)="goToUnderConstruction()" (mouseover) = "animatedIcon($event, 'pulse')" (mouseleave) = "unAnimatedIcon($event, 'pulse')">
             <mat-icon class="iconLarge">settings</mat-icon><span class="nav-caption">CONFIGURACIÓN</span>
         </button>
         
         <mat-menu #cartografia="matMenu">
-            <button mat-menu-item (click)="goToUnderConstruction()">
+            <button mat-menu-item (click)="goToUnderConstruction()" (mouseover) = "animatedIcon($event, 'pulse')" (mouseleave) = "unAnimatedIcon($event, 'pulse')">
               <mat-icon class="iconLarge">terrain</mat-icon>
               Plantas
             </button>
-            <button mat-menu-item (click)="goToUnderConstruction()">
+            <button mat-menu-item (click)="goToUnderConstruction()" (mouseover) = "animatedIcon($event, 'pulse')" (mouseleave) = "unAnimatedIcon($event, 'pulse')">
               <mat-icon class="iconLarge">place</mat-icon>
               Puntos de interés
             </button>
-            <button mat-menu-item (click)="goToUnderConstruction()">
+            <button mat-menu-item (click)="goToUnderConstruction()" (mouseover) = "animatedIcon($event, 'pulse')" (mouseleave) = "unAnimatedIcon($event, 'pulse')">
               <mat-icon class="iconLarge">calendar_today</mat-icon>
               Eventos
             </button>
-            <button mat-menu-item (click)="goToUnderConstruction()">
+            <button mat-menu-item (click)="goToUnderConstruction()" (mouseover) = "animatedIcon($event, 'pulse')" (mouseleave) = "unAnimatedIcon($event, 'pulse')">
               <mat-icon class="iconLarge">directions_walk</mat-icon>
               Rutas
             </button>
           </mat-menu>
         
           <mat-menu #analiticas="matMenu">
-            <button mat-menu-item (click)="goToUnderConstruction()">
+            <button mat-menu-item (click)="goToUnderConstruction()" (mouseover) = "animatedIcon($event, 'pulse')" (mouseleave) = "unAnimatedIcon($event, 'pulse')">
               <mat-icon class="iconLarge">supervisor_account</mat-icon>
               Usuarios
             </button>
-            <button mat-menu-item (click)="goToUnderConstruction()">
+            <button mat-menu-item (click)="goToUnderConstruction()" (mouseover) = "animatedIcon($event, 'pulse')" (mouseleave) = "unAnimatedIcon($event, 'pulse')">
               <mat-icon class="iconLarge">calendar_today</mat-icon>
               Eventos
             </button>
-            <button mat-menu-item (click)="goToUnderConstruction()">
+            <button mat-menu-item (click)="goToUnderConstruction()" (mouseover) = "animatedIcon($event, 'pulse')" (mouseleave) = "unAnimatedIcon($event, 'pulse')">
               <mat-icon class="iconLarge">flip_to_back</mat-icon>
               Mapas de calor
             </button>

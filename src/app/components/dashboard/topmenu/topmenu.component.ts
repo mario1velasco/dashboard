@@ -23,6 +23,14 @@ export class TopmenuComponent implements OnInit {
   public onToggleRightSidenav = () => {
     this.rightsidenavToggle.emit();
   }
+  public animatedIcon(event: any, type: string) {
+    event.target.classList.add('animated');
+    event.target.classList.add(type);
+  }
+  public unAnimatedIcon(event: any, type: string) {
+    event.target.classList.remove('animated');
+    event.target.classList.remove(type);
+  }
 
   public goToUnderConstruction() {
     this.router.navigate(['/dashboard/construction']);
